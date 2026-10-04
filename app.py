@@ -72,7 +72,7 @@ dieselben Komponenten - aber sie merken sich sehr Verschiedenes. Hier wird gemes
 """
 )
 st.caption(
-    "Wurzel der Graphen-und-Netzwerke-Reihe; geplante Nachfolger (nicht gebaut): Brücken und Artikulationspunkte, starke Zusammenhangskomponenten, Euler-Touren, Färbung, Zentralität, Robustheit, "
+    "Wurzel der Graphen-und-Netzwerke-Reihe; Folgestücke: Brücken und Artikulationspunkte, starke Zusammenhangskomponenten, Euler-Touren, Färbung, Zentralität, Robustheit, "
     "Kaskaden, kritische Knoten, Bandbreite."
 )
 
@@ -292,6 +292,6 @@ Implementiert in `bfd_algorithm.py` (Suchen, Komponenten, Bipartit), `bfd_unionf
 st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Graphen und Netzwerke: BFS bis Cliquenbandbreite](https://sebastianhanisch.net/konzepte-graphen-netzwerke.html)."
 )

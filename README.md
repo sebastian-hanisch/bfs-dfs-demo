@@ -8,13 +8,13 @@ Erstes Stück (Wurzel) der **Graphen-und-Netzwerke-Reihe** der "Konzepte"-Reihe 
 
 ```
 1 BFS und DFS (Wurzel)                                                        [DIESES STÜCK]
- ├─ 2 Brücken und Artikulationspunkte ─ 4 Euler-Touren                        [nicht gebaut]
- ├─ 3 Starke Zusammenhangskomponenten, topologische Sortierung                [nicht gebaut]
- ├─ 5 Graphfärbung                                                            [nicht gebaut]
- ├─ 6 Zentralität ─ 7 Strukturkennzahlen                                      [nicht gebaut]
- │        ├─ 8 Robustheit ─ 9 Kaskaden und Ausbreitung                        [nicht gebaut]
- │        └─ 10 Kritische Knoten härten                                       [nicht gebaut]
- └─ 11 Bandbreite ─ 12 Bandbreite von G(n,k,b) und Cliquenüberdeckung         [nicht gebaut]
+ ├─ 2 Brücken und Artikulationspunkte ─ 4 Euler-Touren                        [gebaut: bridges-demo, euler-tour-demo]
+ ├─ 3 Starke Zusammenhangskomponenten, topologische Sortierung                [gebaut: scc-demo]
+ ├─ 5 Graphfärbung                                                            [gebaut: graph-coloring-demo]
+ ├─ 6 Zentralität ─ 7 Strukturkennzahlen                                      [gebaut: centrality-demo, strukturkennzahlen-demo]
+ │        ├─ 8 Robustheit ─ 9 Kaskaden und Ausbreitung                        [gebaut: robustheit-demo, kaskaden-demo]
+ │        └─ 10 Kritische Knoten härten                                       [gebaut: haertung-demo]
+ └─ 11 Bandbreite ─ 12 Bandbreite von G(n,k,b) und Cliquenüberdeckung         [gebaut: bandbreite-demo, cliquenbandbreite-demo]
 ```
 
 Ergebnis in Kürze: **Breiten- und Tiefensuche finden dieselben Komponenten und kosten dasselbe (n + 2 m Elementarschritte), aber die Tiefensuche stapelt auf einem Straßenraster bis zu allen Knoten, während die Warteschlange der Breitensuche bei etwa der Seitenlänge bleibt – im Zufallsgraph ist der Unterschied dagegen klein.** Ohne Sperren enthält der Stapel der Tiefensuche alle n Knoten (ein Schlangenpfad), die Warteschlange 6 bis 30 (Seitenlänge 6 bis 30); mit 30 % gesperrten Straßen ist der Stapel 3.3- bis 15.3-mal so groß, im Zufallsgraph nur 1.5- bis 1.9-mal. Ein Straßenraster **zerfällt schlagartig** bei rund 51 % gesperrter Straßen (die größte Komponente fällt von 85 % bei 40 % gesperrt auf 10 % bei 60 %; der Satz von Kesten nennt 1/2 für das unendliche Quadratgitter); ein Zufallsgraph mit derselben Kantenzahl behält seine Riesenkomponente länger (Schwelle bei rund 63 %), ist aber schon ungesperrt nicht zusammenhängend (98 % der Knoten in der größten Komponente).
@@ -58,9 +58,9 @@ Presets (9), alle mit den Zahlen in ihren Hilfetexten (`tests/test_presets.py`):
 | Netz zerfallen | 14 × 14, 70 % gesperrt: 88 Komponenten, größte nur 9 (4.6 %) |
 | Zufallsgraph, gleiche Kantenzahl | dieselben 400 Knoten und 380 Kanten, aber beliebige Paare: größte Komponente 298 (74.5 %), ungerader Kreis der Länge 9 |
 | Tiefensuche: der Stapel wächst | 20 × 20 ohne Sperren: Stapel 400 (alle Knoten), Warteschlange 20, beide 1920 Schritte |
-| Tiefensuche, gemischte Reihenfolge | derselbe Fall, Nachbarn gemischt: Stapel 278 statt 400, Warteschlange 21, 38 Ebenen |
+| Tiefensuche, gemischte Reihenfolge | derselbe Fall, Nachbarn gemischt: Stapel 278 statt 400, Warteschlange 21, Ebenen 0 bis 38 |
 | Bipartit mit Zeugen-Kreis | Zufallsgraph mit 64 Knoten und 45 Kanten: Zweifärbung scheitert, ungerader Kreis der Länge 5 als Beweis |
-| Große Instanz (30 × 30) | 900 Kreuzungen, 30 % gesperrt: 1218 Straßen, 13 Komponenten, größte 883; Stapel 560, Warteschlange 34; Union-Find 2722 Schritte, Suchen 3309 |
+| Große Instanz (30 × 30) | 900 Kreuzungen, 30 % gesperrt: 1218 Straßen, 13 Komponenten, größte 883; Stapel 560, Warteschlange 34; Union-Find 2722 Schritte, Suchen 3336 |
 
 ## Modell und Verfahren
 
@@ -114,7 +114,7 @@ python -m pytest tests/ -v
 
 ## Bewusst nicht umgesetzt
 
-Einbahnstraßen und starke Zusammenhangskomponenten, Brücken und Artikulationspunkte, Euler-Touren, Färbung, Zentralität, Robustheit gegen gezielte Ausfälle, Kaskaden, Bandbreite – alle sind eigene Stücke der Reihe. Ebenso nicht gebaut: Hub-and-Spoke- und skalenfreie Netze, Wegelängen als Gewichte, dynamische Graphen.
+Einbahnstraßen und starke Zusammenhangskomponenten, Brücken und Artikulationspunkte, Euler-Touren, Färbung, Zentralität, Robustheit gegen gezielte Ausfälle, Kaskaden, Bandbreite – alle sind eigene Stücke der Reihe. Ebenso nicht Teil dieser Demo: Hub-and-Spoke- und skalenfreie Netze, Wegelängen als Gewichte, dynamische Graphen.
 
 ## Lokal ausführen
 
@@ -133,3 +133,7 @@ venv\Scripts\streamlit run app.py
 - Tarjan, R. E. (1975). *Efficiency of a good but not linear set union algorithm.* Journal of the ACM 22(2), 215–225 (Union-Find).
 
 Gebaut mit Streamlit, Plotly, NumPy und pandas.
+
+---
+
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Graphen und Netzwerke: BFS bis Cliquenbandbreite](https://sebastianhanisch.net/konzepte-graphen-netzwerke.html).

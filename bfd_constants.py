@@ -56,8 +56,8 @@ PRESET_HELP = {
     "Tiefensuche: der Stapel wächst": "20 × 20 Kreuzungen, keine Sperren, feste Nachbarreihenfolge: die Tiefensuche läuft einen Schlangenpfad durch das ganze Raster, ihr Stapel enthält am Ende alle 400 Knoten, die Warteschlange der Breitensuche "
                                        "nie mehr als 20. Beide zählen 1920 Elementarschritte (n + 2 m).",
     "Tiefensuche, gemischte Reihenfolge": "Dasselbe Raster, aber die Nachbarn jedes Knotens in zufälliger Reihenfolge: der Stapel der Tiefensuche wird kürzer (278 statt 400), bleibt aber gegen 21 Plätze der Breitensuche gewaltig. Die Ebenen der Breitensuche "
-                                           "ändern sich nicht (38 Ebenen), nur die Entdeckungsreihenfolge.",
+                                           "ändern sich nicht (Ebenen 0 bis 38), nur die Entdeckungsreihenfolge.",
     "Bipartit mit Zeugen-Kreis": "Zufallsgraph mit 64 Knoten und 45 Kanten: ein Nachbarpaar bekommt dieselbe Farbe, die Zweifärbung scheitert, und der Test liefert einen Kreis ungerader Länge (5) als Beweis. Das Raster dagegen ist immer bipartit (Schachbrett).",
     "Große Instanz (30 × 30)": "900 Kreuzungen, 30 % der Straßen gesperrt: 1218 Straßen, 13 Komponenten, die größte hat 883 Knoten (98.1 %). Die Tiefensuche stapelt bis zu 560 Knoten, die Breitensuche höchstens 34; Union-Find braucht 2722 Schritte, "
-                                "die Suchen 3309.",
+                                "die Suchen 3336 (n + 2 m des ganzen Netzes).",
 }

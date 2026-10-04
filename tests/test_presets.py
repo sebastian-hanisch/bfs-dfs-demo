@@ -57,13 +57,13 @@ def test_help_dfs_and_bipartite_and_large_presets():
     _has("Tiefensuche: der Stapel wächst", "alle 400 Knoten", "20", "1920")
     a = ev.analyse(_settings("Tiefensuche, gemischte Reihenfolge"))
     assert (a.bfs.max_frontier, a.dfs.max_frontier, max(a.bfs.level.values())) == (21, 278, 38)
-    _has("Tiefensuche, gemischte Reihenfolge", "278 statt 400", "21 Plätze", "38 Ebenen")
+    _has("Tiefensuche, gemischte Reihenfolge", "278 statt 400", "21 Plätze", "Ebenen 0 bis 38")
     a = ev.analyse(_settings("Bipartit mit Zeugen-Kreis"))
     assert (a.n, a.m, a.bip_ok, len(a.bip_out)) == (64, 45, False, 5)
     _has("Bipartit mit Zeugen-Kreis", "64 Knoten und 45 Kanten", "ungerader Länge (5)")
     a = ev.analyse(_settings("Große Instanz (30 × 30)"))
-    assert (a.n, a.m, a.c, a.largest, round(a.largest_share * 1000), a.dfs.max_frontier, a.bfs.max_frontier, a.comp_uf["full"].steps, a.bfs.steps) == (900, 1218, 13, 883, 981, 560, 34, 2722, 3309)
-    _has("Große Instanz (30 × 30)", "1218 Straßen", "13 Komponenten", "883 Knoten (98.1 %)", "560", "34", "2722", "3309")
+    assert (a.n, a.m, a.c, a.largest, round(a.largest_share * 1000), a.dfs.max_frontier, a.bfs.max_frontier, a.comp_uf["full"].steps, a.comp_bfs.steps) == (900, 1218, 13, 883, 981, 560, 34, 2722, 3336)
+    _has("Große Instanz (30 × 30)", "1218 Straßen", "13 Komponenten", "883 Knoten (98.1 %)", "560", "34", "2722", "3336")
 
 
 def test_presets_of_the_pair_share_edge_counts_and_steps_are_known():
