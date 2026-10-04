@@ -44,7 +44,7 @@ PRESETS = {
     "Große Instanz (30 × 30)": {"kind": "city", "side": 30, "blocked": 0.3, "nettype": "grid", "seed": 35, "order": "fixed", "start": "largest", "step": 2},
 }
 PRESET_HELP = {
-    "Lehrbuchbeispiel": "9 Kreuzungen A bis I in drei getrennten Teilen: das Haus vom Nikolaus (5 Knoten, 8 Straßen), ein Stichweg F-G-H und die abgeschnittene Kreuzung I. Von A aus erreicht die Breitensuche 5 Knoten in 3 Ebenen, es "
+    "Lehrbuchbeispiel": "9 Kreuzungen A bis I in drei getrennten Teilen: das Haus vom Nikolaus (5 Knoten, 8 Straßen), ein Stichweg F-G-H und die abgeschnittene Kreuzung I. Von A aus erreicht die Breitensuche 5 Knoten auf den Ebenen 0 bis 2 (die Kennzahl Ebenen der Breitensuche zeigt die größte Ebenennummer: 2), es "
                     "gibt 3 Komponenten und m - n + c = 4 unabhängige Kreise (genau die 4 Rückwärtskanten der Tiefensuche); das Netz ist wegen der Dreiecke nicht bipartit.",
     "Standardfall (Voreinstellung)": "12 × 12 Kreuzungen (144 Knoten), 30 % der Straßen gesperrt: 185 Straßen bleiben, das Netz zerfällt in 4 Komponenten, die größte hat 140 Knoten (97 %). Die Breitensuche braucht höchstens 14 Plätze in der Warteschlange, "
                      "die Tiefensuche stapelt bis zu 91 Knoten; 45 Rückwärtskanten (= m - n + c) schließen die Kreise.",

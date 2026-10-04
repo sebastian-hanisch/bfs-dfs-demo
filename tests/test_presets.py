@@ -32,7 +32,7 @@ def test_every_preset_has_valid_values_and_a_help_text():
 def test_help_textbook_and_standard():
     a = ev.analyse(_settings("Lehrbuchbeispiel"))
     assert (a.n, a.m, a.c, a.bfs.size, max(a.bfs.level.values()), a.cyclomatic, a.back_edges, a.bip_ok) == (9, 10, 3, 5, 2, 4, 4, False)
-    _has("Lehrbuchbeispiel", "9 Kreuzungen", "5 Knoten in 3 Ebenen", "3 Komponenten", "m - n + c = 4", "4 Rückwärtskanten")
+    _has("Lehrbuchbeispiel", "9 Kreuzungen", "5 Knoten auf den Ebenen 0 bis 2", "3 Komponenten", "m - n + c = 4", "4 Rückwärtskanten")
     a = ev.analyse(_settings("Standardfall (Voreinstellung)"))
     assert (a.n, a.m, a.c, a.largest, round(a.largest_share * 100), a.bfs.max_frontier, a.dfs.max_frontier, a.back_edges) == (144, 185, 4, 140, 97, 14, 91, 45)
     _has("Standardfall (Voreinstellung)", "144 Knoten", "185 Straßen", "4 Komponenten", "140 Knoten (97 %)", "14 Plätze", "91 Knoten", "45 Rückwärtskanten")
