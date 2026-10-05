@@ -252,14 +252,12 @@ st.markdown("---")
 st.subheader("🚧 Wo die Annahmen enden")
 st.markdown(
     """
-| Annahme | Was passiert, wenn sie verletzt ist | Wer setzt an |
-|---|---|---|
-| **Ebenen sind Entfernungen** | Die Ebene der Breitensuche zählt Straßen, nicht Kilometer: der Knoten auf Ebene 3 kann weiter weg sein als der auf Ebene 5. Die kürzeste Weglänge braucht Gewichte. | Kürzeste-Wege-Linie (Dijkstra) |
-| **Alle Straßen sind in beiden Richtungen befahrbar** | Bei Einbahnstraßen genügt eine Suche vom Start nicht: hin und zurück sind verschiedene Fragen (starke Zusammenhangskomponenten). | Folgestück der Reihe |
-| **Das Netz zerfällt an einer Stelle** | Hier zerfällt es bei zufälligen Sperren an einer Schwelle. Wichtige einzelne Straßen (Brücken) und Kreuzungen (Artikulationspunkte) sind etwas anderes und werden gezielt gesucht. | Folgestück (Brücken, Zentralität, Robustheit) |
-| **Sperren treffen alle Straßen gleich** | Die Sperren sind hier gleichverteilt zufällig; echte Ausfälle sind gehäuft (Hochwasser, Streik). | Robustheit und Kaskaden (Folgestücke) |
-| **Elementarschritte zeigen den Aufwand** | Sie zählen Knoten- und Kantenbesuche, keine Rechenzeit; der Vergleich Union-Find gegen Suche hängt an dieser Einheit. | - |
-| **Synthetische Netze** | Ein gestörtes Raster und ein Zufallsgraph, keine echten Straßennetze; Hub-and-Spoke und skalenfreie Netze folgen in späteren Stücken. | Netzwerkanalyse-Stücke der Reihe |
+- **Ebenen sind Entfernungen**: Die Ebene der Breitensuche zählt Straßen, nicht Kilometer: der Knoten auf Ebene 3 kann weiter weg sein als der auf Ebene 5. Die kürzeste Weglänge braucht Gewichte. *Wer setzt an:* Kürzeste-Wege-Linie (Dijkstra).
+- **Alle Straßen sind in beiden Richtungen befahrbar**: Bei Einbahnstraßen genügt eine Suche vom Start nicht: hin und zurück sind verschiedene Fragen (starke Zusammenhangskomponenten). *Wer setzt an:* Folgestück der Reihe.
+- **Das Netz zerfällt an einer Stelle**: Hier zerfällt es bei zufälligen Sperren an einer Schwelle. Wichtige einzelne Straßen (Brücken) und Kreuzungen (Artikulationspunkte) sind etwas anderes und werden gezielt gesucht. *Wer setzt an:* Folgestück (Brücken, Zentralität, Robustheit).
+- **Sperren treffen alle Straßen gleich**: Die Sperren sind hier gleichverteilt zufällig; echte Ausfälle sind gehäuft (Hochwasser, Streik). *Wer setzt an:* Robustheit und Kaskaden (Folgestücke).
+- **Elementarschritte zeigen den Aufwand**: Sie zählen Knoten- und Kantenbesuche, keine Rechenzeit; der Vergleich Union-Find gegen Suche hängt an dieser Einheit.
+- **Synthetische Netze**: Ein gestörtes Raster und ein Zufallsgraph, keine echten Straßennetze; Hub-and-Spoke und skalenfreie Netze folgen in späteren Stücken. *Wer setzt an:* Netzwerkanalyse-Stücke der Reihe.
 """
 )
 

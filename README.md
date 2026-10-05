@@ -4,7 +4,7 @@
 
 Erstes Stück (Wurzel) der **Graphen-und-Netzwerke-Reihe** der "Konzepte"-Reihe für die Website "Sebastian Hanisch – Operations Research und Machine Learning". Fast alle Linien dieses Portfolios (Kürzeste Wege, Spannbäume, Netzwerkfluss, Matching, Graph Neural Networks) rechnen auf Graphen, setzen aber die Grundwerkzeuge stillschweigend voraus: Was ist von hier aus erreichbar, in welche getrennten Teile zerfällt ein Netz, wo liegen Kreise? Diese Demo zeigt **ein** Verfahrenspaar – **Breitensuche (BFS)** und **Tiefensuche (DFS)** – an einem wachsenden Beispiel: dem Straßennetz eines Distributionsraums, in dem ein Teil der Straßen gesperrt ist (das Netz darf zerfallen, das ist die Frage). Vier Fragen, alle gemessen: (1) **Durchmustern** – was merken sich die beiden Suchen, wie unterscheiden sie sich? (2) **Komponenten** – in welche Teile zerfällt das Netz, und was kostet es, sie zu finden (Suchen gegen Union-Find)? (3) **Wann zerfällt das Netz?** – die größte Komponente über den gesperrten Anteil, Raster gegen Zufallsgraph. (4) **Speicher und Bipartit** – Warteschlange gegen Stapel über die Größe, und wann sich ein Netz zweifärben lässt.
 
-**Einordnung in die Reihe:** die Reihe hat zwölf Stücke, dies ist die Wurzel (Details in `graphen-planung/PLAN.md` des Portfolio-Ordners):
+**Einordnung in die Reihe:** die Reihe hat dreizehn Stücke (zwölf im Baum, dazu die Fall-Demo interne-verlinkung-demo), dies ist die Wurzel (Details in `graphen-planung/PLAN.md` des Portfolio-Ordners):
 
 ```
 1 BFS und DFS (Wurzel)                                                        [DIESES STÜCK]
